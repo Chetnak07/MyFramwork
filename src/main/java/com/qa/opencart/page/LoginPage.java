@@ -27,7 +27,6 @@ public class LoginPage {
 	private By forgetPwd = By.linkText("Forgotten Password");
 	private By registrLink = By.linkText("Register");
 	private By loginErrorMessg= By.cssSelector("div.alert.alert-danger.alert-dismissible");
-	private By demopage= By.linkText("demopage");
 	
 	//2. public page constructor
 	
