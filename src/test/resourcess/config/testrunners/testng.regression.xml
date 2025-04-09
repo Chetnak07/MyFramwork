@@ -25,7 +25,7 @@
 		</classes>
 	</test>
 
-	<!--  <test name="Open Cart Product Info Page Test">
+	  <test name="Open Cart Product Info Page Test">
 		<classes>
 			<class name="com.qa.opencart.test.ProductInfoPageTest" />
 		</classes>
@@ -35,7 +35,7 @@
 		<classes>
 			<class name="com.qa.opencart.test.RegistrationPageTest" />
 		</classes>
-	</test>> -->
+	</test>
 	
 
 
