@@ -53,7 +53,6 @@ public class LoginPage {
 	
 	@Step("login to username with{0}and pwd {1}")
 	public AccountPage doLogin(String un, String pwd) {
-		eleutil.waitForPageLoad(Constants.DEFAULT_TIME_OUT); 
 		eleutil.waitForElementToBeVisible(emailId, Constants.DEFAULT_TIME_OUT).sendKeys(un);
 		eleutil.doSendKeys(password, pwd);
 		eleutil.doClick(loginBtn);
@@ -82,13 +81,11 @@ public class LoginPage {
 	}
 	
 	public RegistrationPage nevigateToRegisterPage() {
-		 if (isRegisterLinkExist()) {
-		        eleutil.doClick(registrLink);
-		        // NEW LINE: Wait for the registration form's first field
-		        eleutil.waitForElementToBeVisible(By.id("input-firstname"), Constants.DEFAULT_TIME_OUT);
-		        return new RegistrationPage(driver);
-		    }
-		    return null;
+		if(isRegisterLinkExist()) {
+			eleutil.doClick(registrLink);
+			return new RegistrationPage(driver);
+		}
+		return null;
 	}
 
 	

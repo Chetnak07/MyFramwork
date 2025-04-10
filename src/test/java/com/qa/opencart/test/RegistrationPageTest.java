@@ -8,8 +8,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
-import com.qa.opencart.utils.Constants;
-import com.qa.opencart.utils.ExcelUtils;
 
 public class RegistrationPageTest extends BaseTest {
 	
@@ -33,11 +31,13 @@ public class RegistrationPageTest extends BaseTest {
 			{"hiku","mike","7898786876","pick@123","No"}
 		};
 	}
+	
 //	@DataProvider
 //	public Object[][] getRegisterData(){
 //		Object regData[][] =ExcelUtils.getTestData(Constants.REGISTER_SHEET_NAME);
 //		return regData;
 //	}
+	
 	@Test(dataProvider= "getRegisterData")
 	public void userRegistrationTest(String firstName, String lastName, String telehopne, String password, String subscribe) {
 		Assert.assertTrue(registrationPage.accountRegistration(firstName,lastName,getRendomEmail(),telehopne,password,subscribe ));
