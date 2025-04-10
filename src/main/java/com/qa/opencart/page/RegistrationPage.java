@@ -28,10 +28,17 @@ public class RegistrationPage {
 	public RegistrationPage(WebDriver driver) {
 		this.driver = driver;
 		eleutil = new ElementUtil(driver);
+		
 	}
 
 	public boolean accountRegistration(String firstname, String lastname, String email, String telephone,
 			String password, String subscribe) {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		eleutil.waitForElementToBeVisible(this.firstname, Constants.DEFAULT_TIME_OUT).sendKeys(firstname);
 		eleutil.doSendKeys(this.lastname, lastname);
 		eleutil.doSendKeys(this.email, email);

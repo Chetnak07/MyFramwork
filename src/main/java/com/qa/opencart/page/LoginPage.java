@@ -82,11 +82,13 @@ public class LoginPage {
 	}
 	
 	public RegistrationPage nevigateToRegisterPage() {
-		if(isRegisterLinkExist()) {
-			eleutil.doClick(registrLink);
-			return new RegistrationPage(driver);
-		}
-		return null;
+		 if (isRegisterLinkExist()) {
+		        eleutil.doClick(registrLink);
+		        // NEW LINE: Wait for the registration form's first field
+		        eleutil.waitForElementToBeVisible(By.id("input-firstname"), Constants.DEFAULT_TIME_OUT);
+		        return new RegistrationPage(driver);
+		    }
+		    return null;
 	}
 
 	
