@@ -53,6 +53,7 @@ public class LoginPage {
 	
 	@Step("login to username with{0}and pwd {1}")
 	public AccountPage doLogin(String un, String pwd) {
+		eleutil.waitForPageLoad(Constants.DEFAULT_TIME_OUT); 
 		eleutil.waitForElementToBeVisible(emailId, Constants.DEFAULT_TIME_OUT).sendKeys(un);
 		eleutil.doSendKeys(password, pwd);
 		eleutil.doClick(loginBtn);
