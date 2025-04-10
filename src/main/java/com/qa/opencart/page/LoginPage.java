@@ -65,13 +65,9 @@ public class LoginPage {
 	public boolean doInvalidLogin(String un, String pwd) {
 		WebElement email_ele = eleutil.waitForElementToBeVisible(emailId, Constants.DEFAULT_TIME_OUT);
 		email_ele.clear();
-		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		email_ele.sendKeys(un);
-		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		eleutil.doSendKeys(password, pwd);
-		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		eleutil.doClick(loginBtn);
-		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		String actualErrorMesg = eleutil.doElementGetText(loginErrorMessg);
 		System.out.println(actualErrorMesg);
 			if(actualErrorMesg.contains(Errors.LOGIN_PAGE_ERROR_MESSG)) {

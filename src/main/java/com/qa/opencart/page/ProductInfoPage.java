@@ -18,8 +18,8 @@ public class ProductInfoPage {
 	private ElementUtil eleUtil;
 	private By productHeader = By.cssSelector("div#content h1");
 	private By productImages = By.cssSelector("div#content img");
-	private By productMetaData = By.xpath("//div [@class='col-sm-4']//ul[@class='list-unstyled'][1]/li");
-	private By productPriceData = By.xpath("//div [@class='col-sm-4']//ul[@class='list-unstyled'][2]/li");
+	private By productMetaData = By.cssSelector("div#content ul.list-unstyled:nth-of-type(1) li");
+	private By productPriceData = By.cssSelector("div#content ul.list-unstyled:nth-of-type(2) li");
 	private By quantity = By.id("input-quantity");
 	private By addToCart = By.id("button-cart");
 	private By successMessg = By.cssSelector("div.alert.alert-success.alert-dismissible");
@@ -54,9 +54,9 @@ public class ProductInfoPage {
 
 		for (WebElement e : metaDataList) {
 			String text = e.getText().trim();
-			String Data[] = text.split(":");
-			String metaKey = Data[0].trim();
-			String metaValue = Data[1].trim();
+			String meta[] = text.split(":");
+			String metaKey = meta[0].trim();
+			String metaValue = meta[1].trim();
 			productInfoMap.put(metaKey, metaValue);
 
 		}

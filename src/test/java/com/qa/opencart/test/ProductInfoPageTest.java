@@ -2,8 +2,6 @@ package com.qa.opencart.test;
 
 import java.util.Map;
 
-import javax.swing.text.AbstractDocument.Content;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -53,12 +51,12 @@ public class ProductInfoPageTest extends BaseTest {
 	
 	@Test(dataProvider = "getProductData")
 	public void getProductInfoTest(String productName, String mainProductName) {
-		searchresultPage = accPage.doSearch(productName);
-		productInfoPage =searchresultPage.selectProduct(mainProductName);
+		searchresultPage = accPage.doSearch("MacBook");
+		productInfoPage =searchresultPage.selectProduct("MacBook Pro");
 	   Map<String,String> actProductInforMap =	productInfoPage.getProductInfo();
 	   actProductInforMap.forEach((k,v) -> System.out.println(k+ ":" +v));
 	   
-	  softAssert.assertEquals(actProductInforMap.get("productName"),"MacBook Air");
+	  softAssert.assertEquals(actProductInforMap.get("productName"),"MacBook Pro");
 	  softAssert.assertEquals(actProductInforMap.get("Brand"),"Apple");
 	  softAssert.assertEquals(actProductInforMap.get("Reward Points"),"800");
 	  softAssert.assertEquals(actProductInforMap.get("price"),"$2,000.00");
