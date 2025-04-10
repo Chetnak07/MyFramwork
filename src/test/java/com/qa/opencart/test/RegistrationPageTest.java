@@ -24,20 +24,20 @@ public class RegistrationPageTest extends BaseTest {
 		return email;
 	}
 	
-//	@DataProvider
-//	public Object[][] getRegisterData()
-//	{
-//		return new Object [][]{
-//			{"chet","xyx","7898789876","test@123","No"},
-//			{"piku","xix","9098789876","test@46","yes"},
-//			{"hiku","mike","7898786876","pick@123","No"}
-//		};
-//	}
 	@DataProvider
-	public Object[][] getRegisterData(){
-		Object regData[][] =ExcelUtils.getTestData(Constants.REGISTER_SHEET_NAME);
-		return regData;
+	public Object[][] getRegisterData()
+	{
+		return new Object [][]{
+			{"chet","xyx","7898789876","test@123","No"},
+			{"piku","xix","9098789876","test@46","yes"},
+			{"hiku","mike","7898786876","pick@123","No"}
+		};
 	}
+//	@DataProvider
+//	public Object[][] getRegisterData(){
+//		Object regData[][] =ExcelUtils.getTestData(Constants.REGISTER_SHEET_NAME);
+//		return regData;
+//	}
 	@Test(dataProvider= "getRegisterData")
 	public void userRegistrationTest(String firstName, String lastName, String telehopne, String password, String subscribe) {
 		Assert.assertTrue(registrationPage.accountRegistration(firstName,lastName,getRendomEmail(),telehopne,password,subscribe ));

@@ -16,8 +16,8 @@ public class Constants {
 	public static final Object IMACBOOK_PRODUCT_COUNT = 1;
 	public static final CharSequence REGISTER_SUCCESS_MESSAGE = "Created";
 	public static final int MACBOOK_IMAGE_COUNT = 3;
-	public static final String REGISTER_SHEET_NAME = "Registration";
-	public static final String PRODUCT_SHEET_NAME = "Product";
+	//public static final String REGISTER_SHEET_NAME = "Registration";
+	//public static final String PRODUCT_SHEET_NAME = "Product";
 	
 
 }
