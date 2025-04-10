@@ -64,6 +64,6 @@ public class ProductInfoPageTest extends BaseTest {
 	  softAssert.assertEquals(actProductInforMap.get("price"),"$2,000.00");
 	  softAssert.assertEquals(actProductInforMap.get("Product Code"),"Product 18");
 	  softAssert.assertAll();
-		
+	
 	}
 }
