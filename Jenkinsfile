@@ -45,3 +45,13 @@ pipeline {
                 echo("running automation sanity test cases")
             }
         }
+        
+         stage("Deploy to PROD"){
+            steps{
+                echo("PROD deployment")
+            }
+        }
+        
+    }
+    
+}
