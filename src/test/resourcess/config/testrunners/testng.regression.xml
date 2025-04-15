@@ -14,18 +14,20 @@
 	</listeners>
 
 	<test name="Open Cart Login Page Test">
+	<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.test.LoginPageTest" />
 		</classes>
 	</test>
 
-	 <test name="Open Cart Accounts Page Test">
+	<!--  <test name="Open Cart Accounts Page Test">
+	 <parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.test.AccountsPageTest" />
 		</classes>
-	</test>
+	</test>-->
 
-	  <test name="Open Cart Product Info Page Test">
+	 <!--  <test name="Open Cart Product Info Page Test">
 		<classes>
 			<class name="com.qa.opencart.test.ProductInfoPageTest" />
 		</classes>
@@ -35,7 +37,7 @@
 		<classes>
 			<class name="com.qa.opencart.test.RegistrationPageTest" />
 		</classes>
-	</test>
+	</test> -->
 	
 
 

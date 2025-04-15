@@ -7,29 +7,36 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class OptionsManger {
 	
+
 	private Properties prop;
-	private ChromeOptions co;
+	private ChromeOptions co;	
 	private FirefoxOptions fo;
+
 	
-	public OptionsManger(Properties prop)
-	{
-		this.prop =prop;
+	public OptionsManger(Properties prop) {
+		this.prop = prop;
 	}
+	
 	public ChromeOptions getChromeOptions() {
-		co= new ChromeOptions();
-		co.addArguments("--remote-allow-origins=*"); 
-	      co.addArguments("--start-maximized");
-	      
-		if(Boolean.parseBoolean(prop.getProperty("headless"))) co.addArguments("---headless");
-		if(Boolean.parseBoolean(prop.getProperty("incognito"))) co.addArguments("---incognito");
+		co = new ChromeOptions();
+		if(Boolean.parseBoolean(prop.getProperty("headless"))) co.addArguments("--headless");
+		if(Boolean.parseBoolean(prop.getProperty("incognito"))) co.addArguments("--incognito");
+		
+			if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+				co.setPlatformName("linux");
+			}
+		
 		return co;
 	}
-
-	public FirefoxOptions getFirfoxOptions() {
-		fo= new FirefoxOptions();
-		if(Boolean.parseBoolean(prop.getProperty("headless"))) co.addArguments("---headless");
-		if(Boolean.parseBoolean(prop.getProperty("incognito"))) co.addArguments("---incognito");
+	
+	public FirefoxOptions getFirefoxOptions() {
+		fo = new FirefoxOptions();
+		if(Boolean.parseBoolean(prop.getProperty("headless"))) fo.addArguments("--headless");
+		if(Boolean.parseBoolean(prop.getProperty("incognito"))) fo.addArguments("--incognito");
+		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			co.setPlatformName("linux");
+		}
 		return fo;
 	}
-	
+
 }
